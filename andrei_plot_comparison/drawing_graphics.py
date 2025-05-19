@@ -6,10 +6,11 @@ from kaczmarz_realisation import (
     randomized_kaczmarz,
     maximal_residual_kaczmarz,
     preconditioned_kaczmarz,
+    sorted_kaczmarz,
 )
 
 method_names = ["classical_kaczmarz", "randomized_kaczmarz", "maximal_residual_kaczmarz",
-                "preconditioned_kaczmarz"]
+                "preconditioned_kaczmarz", "sorted_kaczmarz"]
 
 
 def relative_solution_error(A, b, x_true, directory='', max_iter=1000):
@@ -19,6 +20,7 @@ def relative_solution_error(A, b, x_true, directory='', max_iter=1000):
         "randomized_kaczmarz": (randomized_kaczmarz, "red"),
         "maximal_residual_kaczmarz": (maximal_residual_kaczmarz, "green"),
         "preconditioned_kaczmarz": (preconditioned_kaczmarz, "purple"),
+        "sorted_kaczmarz": (sorted_kaczmarz, "black"),
     }
     for name in method_names:
         method, color = methods[name]
